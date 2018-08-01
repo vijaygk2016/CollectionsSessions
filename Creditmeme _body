@@ -1,0 +1,119 @@
+
+
+SCENERIO	Response
+If creditMemoid and Amount are not equal and creditmemoid given is present in the setup	"{
+    ""IntegrationEntities"": {
+        ""integrationEntity"": [
+            {
+                ""integrationEntityHeader"": {
+                    ""integrationTrackingNumber"": ""457"",
+                    ""referenceCodeForEntity"": ""PA""
+                },
+                ""integrationEntityDetails"": {
+                    ""acknowledgement"": {
+                        ""id"": ""FpostInvoice/48327"",
+                        ""eventId"": ""FpostInvoice/48327"",
+                        ""externalId"": ""FpostInvoice/48327"",
+                        ""status"": ""FAILED""
+                    }
+                },
+                ""processingErrors"": {
+                    ""error"": [
+                        {
+                            ""errorCode"": ""INVALID_AMOUNT"",
+                            ""errorDescription"": ""Apportion amount is not correct""
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}"
+
+
+---------------------
+If creditMemoid and Amount are equal and creditmemoid given is presenyt in the setup	"{
+    ""IntegrationEntities"": {
+        ""integrationEntity"": [
+            {
+                ""integrationEntityHeader"": {
+                    ""integrationTrackingNumber"": ""457"",
+                    ""referenceCodeForEntity"": ""PA""
+                },
+                ""integrationEntityDetails"": {
+                    ""acknowledgement"": {
+                        ""id"": ""FpostInvoice/47212"",
+                        ""eventId"": ""FpostInvoice/47212"",
+                        ""externalId"": ""FpostInvoice/47212"",
+                        ""status"": ""SUCCESS""
+                    }
+                }
+            }
+        ]
+    }
+}"
+If the apportioned amount is given with invalid characters	"{
+    ""Errors"": {
+        ""integrationTrackingNumber"": """",
+        ""error"": [
+            {
+                ""errorCode"": ""INTERNAL_SERVER_ERROR"",
+                ""errorDescription"": ""Unexpected character ('0' (code 48)): was expecting double-quote to start field name\n at [Source: org.apache.catalina.connector.CoyoteInputStream@150abf0e; line: 9, column: 89]"",
+                ""stackTrace"": ""org.codehaus.jackson.JsonParseException: Unexpected character ('0' (code 48)): was expecting double-quote to start field name\n at [Source: org.apache.catalina.connector.CoyoteInputStream@150abf0e; line: 9, column: 89]\n\tat org.codehaus.jackson.JsonParser._constructError(JsonParser.java:1432)\n\tat org.codehaus.jackson.impl.JsonParserMinimalBase._reportError(JsonParserMinimalBase.java:385)\n\tat org.codehaus.jackson.impl.JsonParserMinimalBase._reportUnexpectedChar(JsonParserMinimalBase.java:306)\n\tat org.codehaus.jackson.impl.Utf8StreamParser._handleUnusualFieldName(Utf8StreamParser.java:1531)\n\tat org.codehaus.jackson.impl.Utf8StreamParser._parseFieldName(Utf8StreamParser.java:1221)\n\tat org.codehaus.jackson.impl.Utf8StreamParser.nextToken(Utf8StreamParser.java:489)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:690)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserialize(BeanDeserializer.java:580)\n\tat org.codehaus.jackson.map.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:299)\n\tat org.codehaus.jackson.map.deser.SettableBeanProperty$MethodProperty.deserializeAndSet(SettableBeanProperty.java:414)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:697)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserialize(BeanDeserializer.java:580)\n\tat org.codehaus.jackson.map.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:299)\n\tat org.codehaus.jackson.map.deser.SettableBeanProperty$MethodProperty.deserializeAndSet(SettableBeanProperty.java:414)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:697)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserialize(BeanDeserializer.java:580)\n\tat org.codehaus.jackson.map.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:217)\n\tat org.codehaus.jackson.map.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:194)\n\tat org.codehaus.jackson.map.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:30)\n\tat org.codehaus.jackson.map.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:299)\n\tat org.codehaus.jackson.map.deser.SettableBeanProperty$MethodProperty.deserializeAndSet(SettableBeanProperty.java:414)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:697)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserialize(BeanDeserializer.java:580)\n\tat org.codehaus.jackson.map.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:299)\n\tat org.codehaus.jackson.map.deser.SettableBeanProperty$MethodProperty.deserializeAndSet(SettableBeanProperty.java:414)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:697)\n\tat org.codehaus.jackson.map.deser.BeanDeserializer.deserialize(BeanDeserializer.java:580)\n\tat org.codehaus.jackson.map.ObjectMapper._readValue(ObjectMapper.java:2695)\n\tat org.codehaus.jackson.map.ObjectMapper.readValue(ObjectMapper.java:1308)\n\tat org.codehaus.jackson.jaxrs.JacksonJsonProvider.readFrom(JacksonJsonProvider.java:419)\n\tat com.sun.jersey.json.impl.provider.entity.JacksonProviderProxy.readFrom(JacksonProviderProxy.java:139)\n\tat com.sun.jersey.spi.container.ContainerRequest.getEntity(ContainerRequest.java:488)\n\tat com.sun.jersey.server.impl.model.method.dispatch.EntityParamDispatchProvider$EntityInjectable.getValue(EntityParamDispatchProvider.java:123)\n\tat com.sun.jersey.server.impl.inject.InjectableValuesProvider.getInjectableValues(InjectableValuesProvider.java:46)\n\tat com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$EntityParamInInvoker.getParams(AbstractResourceMethodDispatchProvider.java:153)\n\tat com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$TypeOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:183)\n\tat com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75)\n\tat com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302)\n\tat com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)\n\tat com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108)\n\tat com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)\n\tat com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84)\n\tat com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1511)\n\tat com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1442)\n\tat com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1391)\n\tat com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1381)\n\tat com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416)\n\tat com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538)\n\tat com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:729)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)\n\tat org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:620)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat java.lang.Thread.run(Thread.java:745)\n""
+            }"
+If we are sending request for already apportioned creditmemoid and apportioned amount	"{
+    ""IntegrationEntities"": {
+        ""integrationEntity"": [
+            {
+                ""integrationEntityHeader"": {
+                    ""integrationTrackingNumber"": ""457"",
+                    ""referenceCodeForEntity"": ""PA""
+                },
+                ""integrationEntityDetails"": {
+                    ""acknowledgement"": {
+                        ""id"": ""12312216qwerty"",
+                        ""eventId"": ""12312216qwerty"",
+                        ""externalId"": ""12312216qwerty"",
+                        ""status"": ""FAILED""
+                    }
+                },
+                ""processingErrors"": {
+                    ""error"": [
+                        {
+                            ""errorCode"": ""ALREADY_APPORTIONED"",
+                            ""errorDescription"": ""Credit Memo is already fully apportioned.""
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}"
+If the creditmemoid given is wrong	"{
+    ""IntegrationEntities"": {
+        ""integrationEntity"": [
+            {
+                ""integrationEntityHeader"": {
+                    ""integrationTrackingNumber"": ""457"",
+                    ""referenceCodeForEntity"": ""PA""
+                },
+                ""integrationEntityDetails"": {
+                    ""acknowledgement"": {
+                        ""id"": ""12345"",
+                        ""eventId"": ""12345"",
+                        ""externalId"": ""12345"",
+                        ""status"": ""FAILED""
+                    }
+                },
+                ""processingErrors"": {
+                    ""error"": [
+                        {
+                            ""errorCode"": ""ERR_OBJECT_NOT_FOUND"",
+                            ""errorDescription"": "" Credit Memo not found for uniqueId : 12345""
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
