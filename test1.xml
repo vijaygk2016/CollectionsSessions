@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Audit Test Suite" parallel="instances" thread-count="1">
+
+	<parameter name="userName" value="admin@protectbeatle.com"></parameter>
+	<parameter name="userPassword" value="Elastica#12345"></parameter>
+	<parameter name="environmentName" value="eoe"></parameter>
+	<parameter name="tenantName" value="protectbeatlecom"></parameter>
+	<parameter name="referer" value="https://eoe.elastica-inc.com" />
+	<parameter name="tenantToken" value="nIzqjM7QUjS4OcWe2Oti7yx1aRgltlCcXSnPEwNa9sQ" />
+	<parameter name="isLoggingOn" value="true"></parameter>
+	<parameter name="apiBaseVersion" value="v1"></parameter>
+	<parameter name="loadApparraziServicesCheck" value="yes" />
+	
+	 
+  	<!-- <parameter name="userName" value="admin@auditregbeatle.com"></parameter>
+	<parameter name="userPassword" value="Elastica12345!#"></parameter>
+	<parameter name="environmentName" value="prod"></parameter>
+	<parameter name="tenantName" value="auditregbeatlecom"></parameter>
+	<parameter name="referer" value="https://app.elastica.net" />
+	<parameter name="isLoggingOn" value="true"></parameter>
+	<parameter name="apiBaseVersion" value="v1"></parameter>
+	<parameter name="tenantToken" value="WVINEyWYdCI/lYq47w1PkLoYaPBJMqUsszm+LOStr4k=" /> 
+    -->
+   
+	
+	
+	<!--  <parameter name="userName" value="admin@auditregbeatle.com"></parameter>
+	<parameter name="userPassword" value="Elastica12345!"></parameter>
+	<parameter name="environmentName" value="cep"></parameter>
+	<parameter name="tenantName" value="auditregbeatlecom"></parameter>
+	<parameter name="referer" value="https://app-cep.elastica.net" />
+	<parameter name="isLoggingOn" value="true"></parameter>
+	<parameter name="apiBaseVersion" value="v1"></parameter>
+	<parameter name="tenantToken" value="WVINEyWYdCI/lYq47w1PkLoYaPBJMqUsszm+LOStr4k=" />
+	  -->
+	 
+	
+	 
+	<!--  <parameter name="userName" value="admin@auditregbeatle.com"></parameter>
+	<parameter name="userPassword" value="Elastica!1234"></parameter>
+	<parameter name="environmentName" value="eoe"></parameter>
+	<parameter name="tenantName" value="auditregbeatlecom"></parameter>
+	<parameter name="referer" value="https://eoe.elastica-inc.com" />
+	<parameter name="isLoggingOn" value="true"></parameter>
+	<parameter name="apiBaseVersion" value="v1"></parameter>
+	<parameter name="tenantToken" value="WVINEyWYdCI/lYq47w1PkLoYaPBJMqUsszm+LOStr4k=" /> -->
+	 
+	
+	<test name="Audit WebUpload CSV Export Regression Tests Suite">
+		<classes>
+			<class name="com.elastica.beatle.audit.factoryClass.AuditWebUploadCSVExportFactory"></class>
+		</classes>
+	</test>			
+</suite>
+
