@@ -1,0 +1,14 @@
+{
+"IntegrationEntities": {
+"integrationEntity": [{
+"integrationEntityHeader":
+{ "integrationTrackingNumber": "457", "referenceCodeForEntity": "PA" } 
+,
+"integrationEntityDetails": {
+ "creditMemoApportionment": 
+{ "creditMemoId":"12312313", "isUniqueId": true, "apportionedAmount":500 } 
+}
+}]
+}
+} 
+ 
