@@ -1,1 +1,62 @@
-{"IntegrationEntities":{"integrationEntity":[{"integrationEntityHeader":{"integrationTrackingNumber":"457","referenceCodeForEntity":"PA"},"integrationEntityDetails":{"acknowledgement":{"id":"12312268qwerty","eventId":"12312268qwerty","externalId":"12312268qwerty","status":"FAILED"}},"processingErrors":{"error":[{"errorCode":"ERR_OBJECT_NOT_FOUND","errorDescription":" Credit Memo not found for uniqueId : 12312268qwerty"}]}}]}}
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class Webservices {
+
+	public static Response Post(String uRI, String stringJSON) {
+		RequestSpecification requestSpecification = RestAssured.given().body(stringJSON);
+		requestSpecification.contentType(ContentType.JSON);
+		//requestSpecification.headers(arg0);
+		Response response = requestSpecification.post(uRI);
+		return response;
+
+	}
+
+	public static Response Get(String uRI) {
+		RequestSpecification requestSpecification = RestAssured.given();
+		requestSpecification.contentType(ContentType.JSON);
+		//requestSpecification.headers(arg0);
+		Response response = requestSpecification.get(uRI);
+		return response;
+
+	}
+
+	public static Response Put(String uRI, String stringJSON) {
+		RequestSpecification requestSpecification = RestAssured.given().body(stringJSON);
+		requestSpecification.contentType(ContentType.JSON);
+		//requestSpecification.headers(arg0);
+		Response response = requestSpecification.put(uRI);
+		return response;
+
+	}
+	
+	public static Response Delete(String uRI, String stringJSON) {
+		RequestSpecification requestSpecification = RestAssured.given().body(stringJSON);
+		requestSpecification.contentType(ContentType.JSON);
+		//requestSpecification.headers(arg0);
+		Response response = requestSpecification.delete(uRI);
+		return response;
+
+	}
+
+}
+--------------------------------------------------------------
+
+
+Response response;
+	
+	@Test
+	public void verifyGetLIST_USERS(){
+		
+		System.out.println("-------***********---------");
+		String url = URL.fixURL+EndpointURL.LIST_USERS.getResourcePath();
+		System.out.println(url);
+		response=Webservices.Get(url);
+		System.out.println(response.getBody().asString());
+		System.out.println("-------***********---------");
+		System.out.println("");
+	}
+  
+  --------------------------------------------------------
